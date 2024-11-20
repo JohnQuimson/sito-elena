@@ -1,0 +1,252 @@
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo della pagina */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #98a89e, #4e6e50); /* Salvia sfumato */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+}
+
+/* Contenitore principale */
+.container {
+  max-width: 700px;
+  width: 100%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+/* Animazione di fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Titolo di saluto */
+.greeting {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeInGreeting 1s ease-out forwards;
+}
+
+@keyframes fadeInGreeting {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animazione della mano che saluta */
+.hand {
+  width: 40px;
+  height: 40px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Emoji_u1f44b.svg/1024px-Emoji_u1f44b.svg.png')
+    no-repeat center center;
+  background-size: contain;
+  margin: 20px auto;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Testo principale */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4e6e50;
+  animation: fadeInTitle 1s ease-out forwards;
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sottotitolo */
+.subtitle {
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+  color: #d8e2dc; /* Un salvia molto chiaro */
+  opacity: 0;
+  animation: fadeInSubtitle 1.5s ease-out forwards;
+}
+
+@keyframes fadeInSubtitle {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dominio del sito */
+.domain {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  color: #4e6e50;
+}
+
+.domain a {
+  color: #232e23;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.domain a:hover {
+  text-decoration: underline;
+}
+
+/* Messaggio sorpresa */
+.surprise {
+  display: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #f0f0f0; /* Cambiato a bianco chiaro */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: showSurprise 2s ease-out forwards;
+}
+
+@keyframes showSurprise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer fisso */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #4e6e50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+  /* Ridurre le dimensioni del titolo di saluto */
+  .greeting {
+    font-size: 2rem;
+  }
+
+  /* Ridurre le dimensioni del titolo principale */
+  .title {
+    font-size: 2rem;
+  }
+
+  /* Ridurre le dimensioni del sottotitolo */
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  /* Ridurre le dimensioni del testo del dominio */
+  .domain {
+    font-size: 1rem;
+  }
+
+  /* Ridurre la dimensione del testo della sorpresa */
+  .surprise {
+    font-size: 1rem;
+  }
+
+  /* Aggiungere un po' di padding ai contenitori per mobile */
+  .container {
+    padding: 20px;
+  }
+
+  /* Modificare la dimensione della mano per schermi più piccoli */
+  .hand {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Media Queries per schermi molto piccoli (come telefoni) */
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.7rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .domain {
+    font-size: 1rem;
+  }
+
+  .hand {
+    width: 25px;
+    height: 25px;
+  }
+}
